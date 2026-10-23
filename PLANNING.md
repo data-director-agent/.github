@@ -61,7 +61,7 @@ issue is closed when its last sub-issue closes and the outcome has been demonstr
 ## The project board
 
 All work is tracked on one organisation-level project, **Data Director**
-(TODO: link once created), which collects issues from every repository. Pull requests are not
+(<https://github.com/orgs/data-director-agent/projects/1>), which collects issues from every repository. Pull requests are not
 added to the board separately: the issue is the unit of work, and a pull request links to it
 with `Closes #n`.
 
