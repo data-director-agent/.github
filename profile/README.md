@@ -12,6 +12,7 @@ These apply to every repository in the organisation:
 
 - [Project charter](https://github.com/data-director-agent/.github/blob/main/CHARTER.md) — the project's mission and scope
 - [Governance](https://github.com/data-director-agent/.github/blob/main/GOVERNANCE.md) — how decisions are made and how the maintainer group grows
+- [Planning](https://github.com/data-director-agent/.github/blob/main/PLANNING.md) — how work is planned and tracked in two-week sprints
 - [Contribution guide](https://github.com/data-director-agent/.github/blob/main/CONTRIBUTING.md) — how to propose changes, the DCO sign-off and the pull request workflow
 - [Code of conduct](https://github.com/data-director-agent/.github/blob/main/CODE_OF_CONDUCT.md) — expected standards of behaviour
 
