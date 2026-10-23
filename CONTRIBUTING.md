@@ -13,6 +13,8 @@ add its own `CONTRIBUTING.md` covering its structure, tooling and tests; where i
 - **Changes affecting spec conformance** (interfaces, data models, or behaviour defined by the
   Blueprint): open an `RFC` issue first. See [GOVERNANCE.md](GOVERNANCE.md#rfc-process-for-spec-conformance-changes)
   for the process.
+- **Planning**: how issues are triaged, made ready and scheduled into two-week sprints is
+  described in [PLANNING.md](PLANNING.md).
 
 ## Developer Certificate of Origin (DCO)
 

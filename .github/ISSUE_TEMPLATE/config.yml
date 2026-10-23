@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How work is planned
+    url: https://github.com/data-director-agent/.github/blob/main/PLANNING.md
+    about: How issues move from the Inbox to Done, and what makes an issue ready.
