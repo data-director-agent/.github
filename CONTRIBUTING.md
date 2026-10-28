@@ -15,6 +15,7 @@ add its own `CONTRIBUTING.md` covering its structure, tooling and tests; where i
   for the process.
 - **Planning**: how issues are triaged, made ready and scheduled into two-week sprints is
   described in [PLANNING.md](PLANNING.md).
+- **Using AI tools**: read [Use of generative AI](#use-of-generative-ai) below.
 
 ## Developer Certificate of Origin (DCO)
 
@@ -49,6 +50,29 @@ helps the maintainers track the [Technical Steering Committee trigger](GOVERNANC
 5. A maintainer reviews and approves. Per [GOVERNANCE.md](GOVERNANCE.md#decision-making-lazy-consensus),
    the pull request merges under lazy consensus once approved and no objection is raised within
    the review window.
+
+## Use of generative AI
+
+We encourage the use of AI agents and assistants, such as Claude Code or OpenAI Codex, to work
+faster and learn. Use is optional, and it must be responsible. These principles draw on the
+University of Sheffield's principles for the use of generative AI for productivity.
+
+- **Accountability**: AI supports your judgement and does not replace it. You are responsible for
+  everything you submit, whoever or whatever drafted it, and you must be able to explain it.
+  Sign-off under the [DCO](DCO.md) is yours alone.
+- **Verification**: never accept output uncritically. Read, test and fact-check it, in particular
+  code, citations, data and claims about the Blueprint. Apply your own knowledge of the context.
+- **Bias and misinformation**: watch for biased or false output, and do not pass it on.
+- **Data protection**: do not give personal, sensitive or confidential data, credentials or
+  unpublished material to AI tools that are not approved for it. Comply with GDPR and your
+  institution's policies, and use only tools your institution permits.
+- **Intellectual property**: respect copyright and licences. Generated content may reproduce
+  existing work, so check that you have the right to submit it under the project's licence.
+- **Transparency**: say in the pull request when AI produced a substantial part of a change, and
+  keep agent-authored commits identifiable (for example with a `Co-Authored-By` trailer).
+- **Sustainability**: use AI where it adds clear value.
+
+Maintainers may ask for changes to, or decline, contributions that show no sign of human review.
 
 ## Conduct
 
