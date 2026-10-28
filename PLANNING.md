@@ -148,8 +148,7 @@ An issue is *Done* when:
 
 ## The sprint cycle
 
-Sprints last two weeks, from Monday to the Friday of the following week. Sprint 1 runs from
-Monday 26 October to Friday 6 November 2026; its goal is posted as a status update on the board.
+Sprints last two weeks, from Monday to the Friday of the following week.
 
 | When | Event | Length | Output |
 | --- | --- | --- | --- |
@@ -211,8 +210,7 @@ These steps create the project described above. Most can be done only in the web
    link the repositories `data-director`, `classmark` and `.github` to it.
 2. Edit the **Status** field to have the options Inbox, Backlog, Ready, In progress, In review and
    Done, in that order.
-3. Add an **Iteration** field: duration two weeks, starting Monday 26 October 2026. Rename the
-   iterations Sprint 1, Sprint 2 and so on.
+3. Add an **Iteration** field: duration two weeks. Rename the iterations Sprint 1, Sprint 2 and so on.
 4. Add a **Size** single-select field with the options S, M and L.
 5. Under *Workflows*, enable:
    - *Auto-add to project* for each repository, filter `is:issue`;
@@ -223,14 +221,3 @@ These steps create the project described above. Most can be done only in the web
 6. Create the views listed under [Views](#views) and the burn-up chart under Insights.
 7. Add the existing open issues (`gh project item-add`), then triage them as a one-off exercise.
 8. Write the project README, linking to this document.
-
-### Current state of the board
-
-Recorded on 28 October 2026. Update this section when it changes.
-
-- Done: the project, its fields (Status, Iteration with Sprints 1 to 3, Size), the six views, the
-  repository links, the README and the Sprint 1 status update. Milestone 1 (MVP foundations) is in
-  Sprint 1; the other items are in Inbox.
-- Not done: the workflows are still off except *Auto-add sub-issues to project*, so Status is set
-  by hand. The Insights burn-up chart does not exist yet. Milestone 1 has no due date; set it to
-  Friday 6 November 2026.
