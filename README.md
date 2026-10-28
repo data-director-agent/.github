@@ -1,4 +1,4 @@
-# .github
+# Data Director Reference Implementation GitHub Organisation
 
 Organisation-wide defaults for the [`data-director-agent`](https://github.com/data-director-agent)
 organisation on GitHub. The organisation builds a reference implementation of the Research Data
