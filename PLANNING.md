@@ -5,6 +5,9 @@ feature is used for, the two-week sprint cycle, and the rules that keep the boar
 applies to every repository in the organisation. It is deliberately small: a handful of fields,
 four meetings a month at most, and no estimates beyond a rough size.
 
+**The board:** <https://github.com/orgs/data-director-agent/projects/1> (organisation members only).
+The board's own README links back to this document.
+
 Decisions about *what* the project does are governed by [GOVERNANCE.md](GOVERNANCE.md); this
 document only covers how the agreed work is organised.
 
@@ -94,11 +97,14 @@ Backlog indefinitely.
 
 | View | Layout | Filter | Use |
 | --- | --- | --- | --- |
-| Sprint | Board, columns by Status | `iteration:@current` | Daily work and the review |
-| Planning | Table, grouped by Milestone, showing Iteration and Size | `status:Ready,Backlog` | Refinement and sprint planning |
-| Inbox | Table | `status:Inbox` | Triage |
-| Roadmap | Roadmap, by Iteration | `has:milestone` | Seeing milestones against sprints |
-| My work | Table | `assignee:@me -status:Done` | Each person's own list |
+| All items | Table | none | Searching and bulk edits |
+| Sprint board | Board, columns by Status | `iteration:@current` | Daily work and the review |
+| Triage | Table | `status:Inbox` | Triage |
+| Backlog | Table | `status:Backlog,Ready -iteration:@current` | Refinement and sprint planning |
+| Roadmap | Roadmap, by Iteration | none | Seeing milestones against sprints |
+| Done | Table | `status:Done` | Review and retrospective |
+
+Each person's own list is the *All items* view filtered with `assignee:@me -status:Done`.
 
 The project's Insights hold one chart: a burn-up of the current iteration, counting items by
 Status.
@@ -142,8 +148,7 @@ An issue is *Done* when:
 
 ## The sprint cycle
 
-Sprints last two weeks, from Monday to the Friday of the following week. Sprint 1 runs from
-Monday 26 October to Friday 6 November 2026. (TODO: confirm the start date.)
+Sprints last two weeks, from Monday to the Friday of the following week.
 
 | When | Event | Length | Output |
 | --- | --- | --- | --- |
@@ -205,8 +210,7 @@ These steps create the project described above. Most can be done only in the web
    link the repositories `data-director`, `classmark` and `.github` to it.
 2. Edit the **Status** field to have the options Inbox, Backlog, Ready, In progress, In review and
    Done, in that order.
-3. Add an **Iteration** field: duration two weeks, starting Monday 26 October 2026. Rename the
-   iterations Sprint 1, Sprint 2 and so on.
+3. Add an **Iteration** field: duration two weeks. Rename the iterations Sprint 1, Sprint 2 and so on.
 4. Add a **Size** single-select field with the options S, M and L.
 5. Under *Workflows*, enable:
    - *Auto-add to project* for each repository, filter `is:issue`;
