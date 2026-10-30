@@ -5,8 +5,9 @@ repository adds its own `SECURITY.md`.
 
 ## Reporting a vulnerability
 
-Please report suspected vulnerabilities privately. Do not open a public issue, pull request or
-discussion for them.
+> [!IMPORTANT]
+> Please report suspected vulnerabilities privately. Do not open a public issue, pull request or
+> discussion for them.
 
 Use GitHub's private vulnerability reporting: open the **Security** tab of the affected
 repository and choose **Report a vulnerability**. If the repository does not offer that option,
