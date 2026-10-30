@@ -69,7 +69,8 @@ University of Sheffield's principles for the use of generative AI for productivi
 - **Intellectual property**: respect copyright and licences. Generated content may reproduce
   existing work, so check that you have the right to submit it under the project's licence.
 - **Transparency**: say in the pull request when AI produced a substantial part of a change, and
-  keep agent-authored commits identifiable (for example with a `Co-Authored-By` trailer).
+  keep agent-authored commits identifiable (for example with a `Co-Authored-By` trailer). The
+  project's own use of AI is set out in the [AI usage statement](AI_USAGE.md).
 - **Sustainability**: use AI where it adds clear value.
 
 Maintainers may ask for changes to, or decline, contributions that show no sign of human review.

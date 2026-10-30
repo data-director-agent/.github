@@ -19,6 +19,7 @@ This repository holds no code. GitHub reads it in two ways:
 | [CHARTER.md](CHARTER.md) | The project's mission, scope, roles and values |
 | [GOVERNANCE.md](GOVERNANCE.md) | How decisions are made, the RFC process and how the maintainer group grows |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to propose changes, the DCO sign-off and the pull request workflow |
+| [AI_USAGE.md](AI_USAGE.md) | How generative AI is used to develop the project, and how that use is attributed and checked |
 | [PLANNING.md](PLANNING.md) | How work is planned and tracked: the project board, issue lifecycle and two-week sprints |
 | [.github/ISSUE_TEMPLATE/](.github/ISSUE_TEMPLATE/) | Default issue forms (Bug, Feature, Task) for repositories without their own |
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Expected standards of behaviour |
