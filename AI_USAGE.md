@@ -11,13 +11,14 @@ appropriateness, attribution, accuracy, adherence to data protection and account
 ## What AI is used for
 
 Maintainers and contributors use AI coding agents, chiefly Claude Code (Anthropic), to help write
-code, tests, documentation, architecture decision records, issue and pull request text, and
+code, tests, documentation, specifications, issue and pull request text, and
 configuration. A substantial part of the software and its prose has been drafted this way. People
 decide what to build, make and record the design decisions, review every change and are
 responsible for what is merged.
 
 AI is not used to produce research findings, evaluation results or data. The project holds no
-research data (ADR-0034 in the `data-director` repository).
+research data ([Projects](https://github.com/data-director-agent/data-director/blob/main/docs/specs/projects.md)
+in the `data-director` specifications).
 
 Two things are not AI output:
 
@@ -69,9 +70,10 @@ when an operator turns them on, the repository's operations guide
 
 ## Prompts
 
-Prompt texts are not retained in full. The commit history, pull requests, issues and architecture
-decision records hold the decisions and their reasons, and these are the project's record of
-intent. Whether to keep prompts or session transcripts as well, and where, is open:
+Prompt texts are not retained in full. The specifications in the `data-director` repository
+state the current design and its reasons; the commit history, pull requests and issues, RFCs
+among them, record how it got there. Together these are the project's record of intent. Whether
+to keep prompts or session transcripts as well, and where, is open:
 [data-director-agent/data-director#380](https://github.com/data-director-agent/data-director/issues/380).
 
 ## Accountability

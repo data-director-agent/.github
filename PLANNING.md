@@ -131,8 +131,8 @@ An issue is *Ready* when:
 - its body says what is to be true when it is finished, as acceptance criteria someone else could
   check;
 - it is no larger than M, or has been split into sub-issues;
-- any decision it depends on has been recorded, or a Task to record it (an ADR or an RFC) comes
-  first and is Ready itself;
+- any decision it depends on has been recorded, or a Task to record it (a spec change or an RFC)
+  comes first and is Ready itself;
 - nothing outside the project blocks it (otherwise it carries the `blocked` label and stays in
   Backlog).
 
@@ -142,7 +142,7 @@ An issue is *Done* when:
 
 - the change is merged to `main` with the required checks passing and a maintainer's approval;
 - the acceptance criteria are met, and were shown at the sprint review if the change is visible;
-- documentation, ADRs and registers that describe the change were updated in the same pull
+- documentation, specs and registers that describe the change were updated in the same pull
   request;
 - follow-up work that was found along the way is filed as new issues, not left in comments.
 
@@ -193,9 +193,12 @@ TODO: decide which check-ins are spoken and which are written, and where written
 ## Rules of thumb
 
 - **Spikes** are Tasks with a timebox in the title ("Spike (2 days): …"). Their output is a written
-  note or an ADR, not production code.
-- **Decisions before code.** Where work depends on a fixed format or the Blueprint, the ADR or RFC
-  is its own Task, planned in the same or an earlier sprint.
+  note or a spec change, not production code.
+- **Decisions before code.** Where work changes how the project conforms to the Blueprint, the
+  [RFC](GOVERNANCE.md#rfc-process-for-spec-conformance-changes) is its own Task, planned in the
+  same or an earlier sprint. A change to a fixed format edits its spec in the implementing pull
+  request. Where the design needs agreeing before anyone builds it, a pull request that changes
+  only the spec may come first, with the parts not yet built marked `TODO(#n)`.
 - **Large features** are umbrella issues with sub-issues, not long checklists in one issue body.
 - **Draft pull requests** are for showing work early. Mark them ready for review when they meet
   the definition of done.
