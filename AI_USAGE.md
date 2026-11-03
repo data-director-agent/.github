@@ -72,7 +72,8 @@ when an operator turns them on, the repository's operations guide
 
 Prompt texts are not retained in full. The specifications in the `data-director` repository
 state the current design and its reasons; the commit history, pull requests and issues, RFCs
-among them, record how it got there. Together these are the project's record of intent. Whether to keep prompts or session transcripts as well, and where, is open:
+among them, record how it got there. Together these are the project's record of intent. Whether
+to keep prompts or session transcripts as well, and where, is open:
 [data-director-agent/data-director#380](https://github.com/data-director-agent/data-director/issues/380).
 
 ## Accountability
