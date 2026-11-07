@@ -7,6 +7,32 @@ welcomes issues, discussion, and pull requests.
 This guide applies to every repository in the `data-director-agent` organisation. A repository may
 add its own `CONTRIBUTING.md` covering its structure, tooling and tests; where it does, read both.
 
+## Your first contribution
+
+New to the project? You do not need to read the governance documents first. For the code
+repository, [`data-director`](https://github.com/data-director-agent/data-director):
+
+1. Fork it, clone your fork and create a branch.
+2. From the root of the clone, run `uv run scripts/dev.py setup`, then `uv run scripts/dev.py doctor`
+   to check the result.
+3. Make your change and run the tests (`uv run pytest`).
+4. Commit with a sign-off (`git commit -s`, see [below](#developer-certificate-of-origin-dco)).
+5. Open a pull request against `main`, describing what you changed and how you tested it.
+
+[Your first contribution](https://data-director-agent.github.io/data-director/developer-guide/first-contribution/)
+on the documentation site has each step in full, and the repository's own
+[CONTRIBUTING.md](https://github.com/data-director-agent/data-director/blob/main/CONTRIBUTING.md)
+covers its structure, tooling and checks.
+
+| I want to… | Do this |
+|---|---|
+| Fix a typo or improve a document | Edit the file on GitHub and open a pull request. |
+| Report a bug | Open an issue with the steps that reproduce it. |
+| Review the Blueprint mapping, or the advice an agent gave | Open an issue with the matching form in the code repository: no code needed. |
+| Fix a bug or add a small feature | Follow the steps above. |
+| Add an agent | Read [Writing an agent](https://data-director-agent.github.io/data-director/developer-guide/writing-an-agent/), then follow the steps above. |
+| Change an interface, data model or behaviour the Blueprint defines | Open an `RFC` issue first ([RFC process](GOVERNANCE.md#rfc-process-for-spec-conformance-changes)). |
+
 ## Before you start
 
 - **Bugs and small changes**: open an issue or go straight to a pull request.
