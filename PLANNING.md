@@ -151,21 +151,45 @@ An issue is *Done* when:
 
 ## Coding agents
 
-Coding agents work on issues and pull requests alongside people, and are expected to keep the board
-truthful as they go, so that nobody has to tidy it afterwards. Each repository's `AGENTS.md` says
-how; for `data-director` see its section "Keeping the board accurate". In outline, an agent:
+Coding agents work on issues and pull requests alongside people, and keep the board truthful as
+they go, so that nobody has to tidy it afterwards. Update the issue as the work happens, in the
+same session, not at the end or "later": a stale board is worse than a sparse one. Each
+repository's `AGENTS.md` points here and adds what is specific to it, such as its labels.
 
-- files issues with a type, `area: …` labels, a milestone where one applies, a parent where there is
-  an umbrella, and acceptance criteria;
-- assigns the person it works for, moves the issue to *In progress* when it starts and to *In review*
-  when the pull request is ready, and writes `Closes #n` in the pull request;
-- files follow-up work as new issues, adds or removes `blocked` with a comment, and closes issues
-  that will not be done as *not planned* with a reason;
-- leaves triage and refinement (*Backlog*, *Ready*), the Iteration and the Size to people, suggesting
-  a change in a comment where it thinks one is wrong, unless asked to set them.
+**What is automated.** Do not set these by hand.
 
-Where an agent's session cannot write project fields, it says in its pull request and its final
-message which Status an issue should move to, and never reports a change it did not see made.
+- A new issue is added to the board with Status *Inbox*; a pull request that is ready for review
+  (not a draft) is added as *In review*.
+- Closing an issue, or merging a pull request that says `Closes #n`, sets *Done*; reopening sets
+  *Backlog*. Do not move an item to *Done* yourself.
+- Pull requests take no labels by hand; the labels Dependabot and release-please apply belong to
+  them.
+
+**What an agent keeps up to date.** Do each of these when its moment arrives.
+
+| When | Do |
+| --- | --- |
+| You file an issue | Search for a duplicate first. Use an issue form so it has a type (Task, Bug or Feature); add every `area: …` label that applies, the themes that fit, and `needs spec` if it changes a fixed format. Set the milestone if it serves one (list them with the milestones API; do not invent one), and attach it as a sub-issue if it belongs under an umbrella. Write acceptance criteria someone else could check. |
+| You find follow-up work | File it as a new issue and link it, and mark the place where something is left undone with the issue reference (`TODO(#123)`). Do not leave it in a comment. |
+| You start work on an issue | Assign it to the person you are working for (never to yourself or a bot), set Status to *In progress*, and say in a comment what you are doing if the issue is not already clear. A person has at most two issues *In progress*. |
+| You open a pull request | Put `Closes #n` in the body, so the issue closes on merge. Keep it a draft until it meets the [definition of done](#definition-of-done); when it is marked ready, set the issue to *In review*. If the work has no issue, file one first. |
+| The scope or understanding of an issue changes | Correct its labels, type, milestone and acceptance criteria, and comment on why. |
+| Work is waiting on something outside the project | Add `blocked`, say in a comment what it waits on, and leave the issue in *Backlog*. Remove the label, and say so, when it is unblocked. |
+| An issue will not be done, or is a duplicate | Close it as not planned (or duplicate) with a sentence saying why. Do not leave it in *Backlog*. |
+| A pull request has merged | Check that the issue closed and, if its description was stale, correct it. File anything left over. |
+
+**What people decide.** Do not set these unless the person you work for asks you to, and then do it
+as they say: moving an issue from *Inbox* to *Backlog* or *Ready* (triage and refinement), the
+*Iteration* (sprint planning) and *Size* (set by whoever moves it to *Ready*). When you think one
+is wrong, say so in a comment on the issue, with your reasoning, instead of changing it.
+
+**How to set things.** Issue type, labels, milestone, assignees and sub-issues are all settable with
+the GitHub MCP tools (`issue_write`, `sub_issue_write`). Project fields such as Status are not
+reachable from a cloud session: GraphQL and the organisation Projects endpoints are blocked there.
+Where you have `gh` with the `project` scope (a local session), use `gh project item-edit`. Where
+you cannot, do not pretend: put a line in the pull request description and in your final message
+naming the issue and the Status it should move to (`Board: move #n to In progress`), so that a
+person can do it in a click. Never report a board change as made unless you saw it made.
 
 ## The sprint cycle
 
