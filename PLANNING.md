@@ -244,7 +244,8 @@ These steps create the project described above. Most can be done only in the web
    - *Item reopened*: set Status to Backlog.
 
    A repository's own workflow (for `data-director`, `project-status.yml`) may add its pull requests
-   as *In review*; it needs the repository variable `PROJECT_NUMBER` and the secret `PROJECT_TOKEN`
+   as *In review*; it needs the repository variables `PROJECT_NUMBER` and `PROJECT_APP_ID` and the secret
+   `PROJECT_APP_PRIVATE_KEY` (a GitHub App's credentials)
    described in the workflow's header.
 6. Create the views listed under [Views](#views) and the burn-up chart under Insights.
 7. Add the existing open issues (`gh project item-add`), then triage them as a one-off exercise.
