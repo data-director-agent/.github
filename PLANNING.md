@@ -16,6 +16,7 @@ document only covers how the agreed work is organised.
 - [The pieces and what each is for](#the-pieces-and-what-each-is-for)
 - [The project board](#the-project-board)
 - [Life of an issue](#life-of-an-issue)
+- [Coding agents](#coding-agents)
 - [The sprint cycle](#the-sprint-cycle)
 - [Rules of thumb](#rules-of-thumb)
 - [Setting up the board](#setting-up-the-board)
@@ -64,15 +65,16 @@ issue is closed when its last sub-issue closes and the outcome has been demonstr
 ## The project board
 
 All work is tracked on one organisation-level project, **Data Director**
-(<https://github.com/orgs/data-director-agent/projects/1>), which collects issues from every repository. Pull requests are not
-added to the board separately: the issue is the unit of work, and a pull request links to it
-with `Closes #n`.
+(<https://github.com/orgs/data-director-agent/projects/1>), which collects issues from every repository. The issue is the unit of
+work, and a pull request links to it with `Closes #n`. A repository may also add its pull requests
+to the board when they are ready for review (`data-director` does, in
+`.github/workflows/project-status.yml`); the issue's own Status is still the one that counts.
 
 ### Fields
 
 | Field | Values | Set by |
 | --- | --- | --- |
-| Status | Inbox, Backlog, Ready, In progress, In review, Done | Automation for Inbox and Done; people for the rest |
+| Status | Inbox, Backlog, Ready, In progress, In review, Done | Automation for Inbox, Done and (on reopening) Backlog; people, or a coding agent working for a person, for the rest |
 | Iteration | Two-week sprints, Monday to Friday of the following week | Sprint planning |
 | Size | S (up to a day), M (a few days), L (more than half a sprint) | Whoever moves it to Ready |
 
@@ -121,6 +123,7 @@ Status.
 4. **Planned.** At sprint planning it gets the next Iteration.
 5. **Started.** Whoever picks it up assigns themselves and moves it to *In progress*.
 6. **In review.** The pull request says `Closes #n`; its author moves the issue to *In review*.
+   The author is a person or the coding agent working for them (see [Coding agents](#coding-agents)).
 7. **Done.** Merging the pull request closes the issue, and automation moves it to *Done*.
 
 ### Definition of ready
@@ -145,6 +148,24 @@ An issue is *Done* when:
 - documentation, specs and registers that describe the change were updated in the same pull
   request;
 - follow-up work that was found along the way is filed as new issues, not left in comments.
+
+## Coding agents
+
+Coding agents work on issues and pull requests alongside people, and are expected to keep the board
+truthful as they go, so that nobody has to tidy it afterwards. Each repository's `AGENTS.md` says
+how; for `data-director` see its section "Keeping the board accurate". In outline, an agent:
+
+- files issues with a type, `area: …` labels, a milestone where one applies, a parent where there is
+  an umbrella, and acceptance criteria;
+- assigns the person it works for, moves the issue to *In progress* when it starts and to *In review*
+  when the pull request is ready, and writes `Closes #n` in the pull request;
+- files follow-up work as new issues, adds or removes `blocked` with a comment, and closes issues
+  that will not be done as *not planned* with a reason;
+- leaves triage and refinement (*Backlog*, *Ready*), the Iteration and the Size to people, suggesting
+  a change in a comment where it thinks one is wrong, unless asked to set them.
+
+Where an agent's session cannot write project fields, it says in its pull request and its final
+message which Status an issue should move to, and never reports a change it did not see made.
 
 ## The sprint cycle
 
@@ -221,6 +242,10 @@ These steps create the project described above. Most can be done only in the web
    - *Item closed*: set Status to Done;
    - *Pull request merged*: set Status to Done;
    - *Item reopened*: set Status to Backlog.
+
+   A repository's own workflow (for `data-director`, `project-status.yml`) may add its pull requests
+   as *In review*; it needs the repository variable `PROJECT_NUMBER` and the secret `PROJECT_TOKEN`
+   described in the workflow's header.
 6. Create the views listed under [Views](#views) and the burn-up chart under Insights.
 7. Add the existing open issues (`gh project item-add`), then triage them as a one-off exercise.
 8. Write the project README, linking to this document.
