@@ -34,10 +34,12 @@ contributors. Models and sessions are chosen for the task, because running them 
 
 ## Attribution
 
-- Every commit that an AI agent helped to write carries a `Co-Authored-By` trailer naming the
-  model. The commit also carries the human author's `Signed-off-by` line, which is the author's
-  certification under the [DCO](DCO.md) and is not made by the agent. CI enforces this: it
-  rejects a commit that a coding agent signed off, and one that no human did.
+- Every merged commit that an AI agent helped to write carries a `Co-Authored-By` trailer naming
+  the model, and the `Signed-off-by` line of the person who takes responsibility for it, which is
+  their certification under the [DCO](DCO.md) and is not made by the agent. Both come from the end
+  of the pull request description, which is the squash-merged commit's message. An agent may
+  author the commits on a pull request branch. CI enforces the sign-off: it rejects any sign-off
+  by a coding agent, and a pull request that no human signed off.
 - Pull request descriptions written by an agent say so.
 - The record of tools and models is the commit history. To list the models used in a repository
   and the period:

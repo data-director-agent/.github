@@ -16,8 +16,9 @@ repository, [`data-director`](https://github.com/data-director-agent/data-direct
 2. From the root of the clone, run `uv run scripts/dev.py setup`, then `uv run scripts/dev.py doctor`
    to check the result.
 3. Make your change and run the tests (`uv run pytest`).
-4. Commit with a sign-off (`git commit -s`, see [below](#developer-certificate-of-origin-dco)).
-5. Open a pull request against `main`, describing what you changed and how you tested it.
+4. Commit your change.
+5. Open a pull request against `main`, describing what you changed and how you tested it, and end
+   the description with your sign-off (see [below](#developer-certificate-of-origin-dco)).
 
 [Your first contribution](https://data-director-agent.github.io/data-director/developer-guide/first-contribution/)
 on the documentation site has each step in full, and the repository's own
@@ -45,29 +46,27 @@ covers its structure, tooling and checks.
 
 ## Developer Certificate of Origin (DCO)
 
-Every commit must be signed off to certify that you wrote it or otherwise have the right to submit
-it under the project's licence, per the [Developer Certificate of Origin](DCO.md).
+Every pull request must be signed off to certify that you wrote it or otherwise have the right to
+submit it under the project's licence, per the [Developer Certificate of Origin](DCO.md).
 
-Sign off each commit by adding the `-s` flag:
-
-```sh
-git commit -s -m "Your commit message"
-```
-
-This appends a `Signed-off-by` trailer with your name and email to the commit message, e.g.:
+Pull requests are squash-merged, and the merged commit's message is the pull request's title and
+description. So sign off at the end of the description, as its last line, where it becomes a
+trailer of the merged commit:
 
 ```
 Signed-off-by: Jane Doe <jane@example.com>
 ```
 
 Use your real name and a working email address — anonymous or pseudonymous sign-offs cannot be
-accepted. Pull requests containing unsigned commits will be asked to amend before merge.
+accepted. You can add or edit the line in the browser at any time before merge, and the check runs
+again. Signing off your commits as well (`git commit -s`) is welcome but not required. Edits made
+in GitHub's web editor are signed off automatically.
 
-Only a human can sign off. An AI agent may co-author a commit (`Co-authored-by`) but must never add
-a `Signed-off-by` trailer, whatever name its git identity carries. CI rejects any commit that a
-coding agent signed off or authored, and any commit that has no human sign-off. The person who
-takes responsibility for agent-written work signs it off themselves, for example with
-`git rebase --signoff <base>`.
+Only a human can sign off. An AI agent may co-author the work (a `Co-authored-by` line at the end
+of the description, above the sign-off) but must never add a `Signed-off-by` line, to a commit or
+to a description, whatever name its git identity carries. An agent may author commits. CI rejects
+any sign-off by a coding agent, and a pull request whose description has no human sign-off.
+Dependabot's and the release tool's pull requests are exempt.
 
 Your affiliation (declared via your sign-off name/email or stated in the PR description) also
 helps the maintainers track the [Technical Steering Committee trigger](GOVERNANCE.md#technical-steering-committee-tsc).
