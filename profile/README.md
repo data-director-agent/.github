@@ -4,7 +4,7 @@ A reference implementation of the [Data Director Agentic AI Blueprint](https://w
 
 ## Repositories
 
-- **[data-director](https://github.com/data-director-agent/data-director)** — the reference implementation
+- **[Data Director](https://github.com/data-director-agent/data-director)** — the reference implementation
 - [Sample data](https://github.com/data-director-agent/sample-data) — synthetic data sets for testing purposes
 
 ## Governance
