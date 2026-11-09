@@ -30,4 +30,4 @@ This repository holds no code. GitHub reads it in two ways:
 
 A change here affects every repository in the organisation. Propose it by pull request, following
 [CONTRIBUTING.md](CONTRIBUTING.md); it is decided by lazy consensus as described in
-[GOVERNANCE.md](GOVERNANCE.md). Every commit must be signed off (`git commit -s`).
+[GOVERNANCE.md](GOVERNANCE.md). Every pull request is signed off under the [DCO](DCO.md), as [CONTRIBUTING.md](CONTRIBUTING.md#developer-certificate-of-origin-dco) describes.

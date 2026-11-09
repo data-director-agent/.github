@@ -17,8 +17,8 @@ repository, [`data-director`](https://github.com/data-director-agent/data-direct
    to check the result.
 3. Make your change and run the tests (`uv run pytest`).
 4. Commit your change.
-5. Open a pull request against `main`, describing what you changed and how you tested it, and end
-   the description with your sign-off (see [below](#developer-certificate-of-origin-dco)).
+5. Open a pull request against `main`, describing what you changed and how you tested it. Opening
+   it is your sign-off (see [below](#developer-certificate-of-origin-dco)).
 
 [Your first contribution](https://data-director-agent.github.io/data-director/developer-guide/first-contribution/)
 on the documentation site has each step in full, and the repository's own
@@ -46,26 +46,37 @@ covers its structure, tooling and checks.
 
 ## Developer Certificate of Origin (DCO)
 
-Every pull request must be signed off to certify that you wrote it or otherwise have the right to
-submit it under the project's licence, per the [Developer Certificate of Origin](DCO.md).
+Every contribution is made under the [Developer Certificate of Origin](DCO.md): you certify that
+you wrote it or otherwise have the right to submit it under the project's licence.
 
+**By opening a pull request from your own GitHub account, you certify the DCO for everything in
+it**, whether or not you add a sign-off line. This is your implicit sign-off: the pull request
+permanently records who opened it, the merged commit links to it, and the DCO check names you in
+a notice. Nothing more is needed, so a pull request opened from a coding agent such as Claude Code
+on the web, which must not sign off for you, passes as it is.
+
+You may also sign off explicitly, which records your certification in the merged commit itself.
 Pull requests are squash-merged, and the merged commit's message is the pull request's title and
-description. So sign off at the end of the description, as its last line, where it becomes a
-trailer of the merged commit:
+description, so put the line at the end of the description, where it becomes a trailer:
 
 ```
 Signed-off-by: Jane Doe <jane@example.com>
 ```
 
-Use your real name and a working email address — anonymous or pseudonymous sign-offs cannot be
-accepted. You can add or edit the line in the browser at any time before merge, and the check runs
-again. Signing off your commits as well (`git commit -s`) is welcome but not required. Edits made
-in GitHub's web editor are signed off automatically.
+An explicit sign-off is needed when the pull request was not opened from a person's account (an
+agent's own bot account, for instance), or when someone other than the opener takes
+responsibility for the work. Use your real name and a working email address — anonymous or
+pseudonymous sign-offs cannot be accepted. You can add or edit the line in the browser at any time
+before merge, and the check runs again. Signing off your commits as well (`git commit -s`) is
+welcome but not required. Edits made in GitHub's web editor are signed off automatically.
+
+Approving a pull request is a review, not a sign-off: the reviewer judges the change, and the
+person who submitted it certifies its origin.
 
 Only a human can sign off. An AI agent may co-author the work (a `Co-authored-by` line at the end
 of the description, above the sign-off) but must never add a `Signed-off-by` line, to a commit or
 to a description, whatever name its git identity carries. An agent may author commits. CI rejects
-any sign-off by a coding agent, and a pull request whose description has no human sign-off.
+any sign-off by a coding agent, and a pull request that no human opened or signed off.
 Dependabot's and the release tool's pull requests are exempt.
 
 Your affiliation (declared via your sign-off name/email or stated in the PR description) also
@@ -80,8 +91,8 @@ transparent and attribution clear.
 - **A human signs off, never the agent.** The `Signed-off-by` trailer certifies that *you* have
   reviewed the change and have the right to submit it under the project's licence. An AI agent
   cannot make that certification, so it must not add or supply a `Signed-off-by` trailer on your
-  behalf. Add the sign-off yourself (`git commit -s`), or amend the agent's commits, only after
-  you have read and understood the change. Signing off unreviewed agent output is a false
+  behalf. Open the pull request, or add the sign-off yourself, only after you have read and
+  understood the change. Submitting unreviewed agent output, implicitly or explicitly, is a false
   certification.
 - **The sign-off makes you accountable.** By signing off you take responsibility for the
   contribution, including its licensing and any third-party material the model may have
@@ -89,7 +100,8 @@ transparent and attribution clear.
   in [Use of generative AI](#use-of-generative-ai).
 - **Attribution is separate and complementary.** The sign-off identifies the accountable human;
   it does not credit the tool. Keep agent involvement visible with a `Co-Authored-By` trailer
-  (most agents add one by default; do not remove it), alongside your own `Signed-off-by`:
+  (most agents add one by default; do not remove it), alongside your own `Signed-off-by` if you
+  add one:
 
   ```
   Fix pagination in the catalogue endpoint
@@ -102,10 +114,11 @@ transparent and attribution clear.
   in the pull request description, in line with the *Transparency* principle below. Together, the
   trailers and the description let reviewers and later maintainers see what was human-written,
   what was machine-assisted, and who stands behind it.
-- **Automated or agent-opened pull requests.** If an agent pushes commits or opens a pull request
-  from its own account or environment, the human who directed it remains responsible for the
-  sign-off. Check that every commit carries your `Signed-off-by` before the pull request is
-  marked ready for review. Contributions with no accountable human sign-off cannot be accepted.
+- **Automated or agent-opened pull requests.** If an agent opens a pull request from your
+  account (as Claude Code on the web does), you have submitted it and your implicit sign-off
+  applies, so review the change before it is marked ready for review. If an agent opens one from
+  its own bot account, the human who directed it must sign off explicitly at the end of the
+  description. Contributions with no accountable human sign-off cannot be accepted.
 
 ## Pull request workflow
 
