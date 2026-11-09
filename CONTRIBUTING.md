@@ -63,6 +63,12 @@ Signed-off-by: Jane Doe <jane@example.com>
 Use your real name and a working email address — anonymous or pseudonymous sign-offs cannot be
 accepted. Pull requests containing unsigned commits will be asked to amend before merge.
 
+Only a human can sign off. An AI agent may co-author a commit (`Co-authored-by`) but must never add
+a `Signed-off-by` trailer, whatever name its git identity carries. CI rejects any commit that a
+coding agent signed off or authored, and any commit that has no human sign-off. The person who
+takes responsibility for agent-written work signs it off themselves, for example with
+`git rebase --signoff <base>`.
+
 Your affiliation (declared via your sign-off name/email or stated in the PR description) also
 helps the maintainers track the [Technical Steering Committee trigger](GOVERNANCE.md#technical-steering-committee-tsc).
 
