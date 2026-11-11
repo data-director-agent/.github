@@ -1,0 +1,17 @@
+# Install once with `uv tool install pre-commit && pre-commit install`, then run
+# `pre-commit run --all-files` to check everything. The checks suit this repository's content:
+# Markdown policy documents and YAML issue forms.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        # Two trailing spaces are a Markdown hard line break.
+        args: [--markdown-linebreak-ext=md]
+      - id: mixed-line-ending
+        args: [--fix=lf]
